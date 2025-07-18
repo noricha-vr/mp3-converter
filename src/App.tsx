@@ -6,10 +6,11 @@ import { TaskStats } from './components/TaskStats';
 import { CategoryFilter } from './components/CategoryFilter';
 import { SearchBar } from './components/SearchBar';
 import { ThemeToggle } from './components/ThemeToggle';
+import { ExportImport } from './components/ExportImport';
 import './App.css';
 
 function App() {
-  const { tasks, addTask, updateTask, deleteTask } = useTasks();
+  const { tasks, addTask, updateTask, deleteTask, importTasks } = useTasks();
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [showCompleted, setShowCompleted] = useState(true);
@@ -57,6 +58,10 @@ function App() {
         <CategoryFilter
           selectedCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
+        />
+        <ExportImport
+          tasks={tasks}
+          onImport={importTasks}
         />
         <TaskList
           tasks={filteredTasks}

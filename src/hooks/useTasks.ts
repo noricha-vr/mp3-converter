@@ -72,11 +72,16 @@ export const useTasks = () => {
     updateTask(id, { completed: !tasks.find(t => t.id === id)?.completed });
   }, [tasks, updateTask]);
 
+  const importTasks = useCallback((newTasks: Task[]) => {
+    setTasks(newTasks);
+  }, []);
+
   return {
     tasks,
     addTask,
     updateTask,
     deleteTask,
     toggleTask,
+    importTasks,
   };
 };
