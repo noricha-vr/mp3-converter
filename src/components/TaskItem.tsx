@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import type { Task } from '../types/Task';
 import { DEFAULT_CATEGORIES } from '../types/Task';
+import { TagInput } from './TagInput';
 import './TaskItem.css';
 
 interface TaskItemProps {
   task: Task;
-  onUpdate: (id: string, updates: { title?: string; description?: string; category?: string; dueDate?: Date; completed?: boolean }) => void;
+  onUpdate: (id: string, updates: { title?: string; description?: string; category?: string; tags?: string[]; dueDate?: Date; completed?: boolean }) => void;
   onDelete: (id: string) => void;
 }
 
@@ -14,6 +15,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onUpdate, onDelete }) 
   const [editTitle, setEditTitle] = useState(task.title);
   const [editDescription, setEditDescription] = useState(task.description || '');
   const [editCategory, setEditCategory] = useState(task.category || '');
+  const [editTags, setEditTags] = useState(task.tags || []);
   const [editDueDate, setEditDueDate] = useState(
     task.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : ''
   );
@@ -23,6 +25,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onUpdate, onDelete }) 
       title: editTitle,
       description: editDescription || undefined,
       category: editCategory || undefined,
+      tags: editTags.length > 0 ? editTags : undefined,
       dueDate: editDueDate ? new Date(editDueDate) : undefined,
     });
     setIsEditing(false);
@@ -32,6 +35,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onUpdate, onDelete }) 
     setEditTitle(task.title);
     setEditDescription(task.description || '');
     setEditCategory(task.category || '');
+    setEditTags(task.tags || []);
     setEditDueDate(task.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : '');
     setIsEditing(false);
   };
@@ -89,6 +93,11 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onUpdate, onDelete }) 
               <option key={cat} value={cat}>{cat}</option>
             ))}
           </select>
+          <TagInput
+            tags={editTags}
+            onChange={setEditTags}
+            placeholder="タグを追加"
+          />
           <input
             type="date"
             value={editDueDate}
@@ -120,6 +129,13 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onUpdate, onDelete }) 
                 )}
               </div>
               {task.description && <p className="task-description">{task.description}</p>}
+              {task.tags && task.tags.length > 0 && (
+                <div className="task-tags">
+                  {task.tags.map(tag => (
+                    <span key={tag} className="task-tag">{tag}</span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           <div className="task-actions">

@@ -3,6 +3,7 @@ export interface Task {
   title: string;
   description?: string;
   category?: string;
+  tags?: string[];
   dueDate?: Date;
   completed: boolean;
   order: number;
@@ -14,6 +15,7 @@ export interface CreateTaskInput {
   title: string;
   description?: string;
   category?: string;
+  tags?: string[];
   dueDate?: Date;
 }
 
@@ -21,6 +23,7 @@ export interface UpdateTaskInput {
   title?: string;
   description?: string;
   category?: string;
+  tags?: string[];
   dueDate?: Date;
   completed?: boolean;
 }

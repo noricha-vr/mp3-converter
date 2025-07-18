@@ -115,6 +115,29 @@
   line-height: 1.5;
 }
 
+.task-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.task-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--tag-bg, #e5e7eb);
+  color: var(--tag-text, #374151);
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+:root[data-theme='dark'] .task-tag {
+  background: var(--tag-bg-dark, #374151);
+  color: var(--tag-text-dark, #e5e7eb);
+}
+
 .task-actions {
   display: flex;
   gap: 8px;

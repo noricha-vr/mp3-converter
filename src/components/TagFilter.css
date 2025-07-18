@@ -1,0 +1,96 @@
+.tag-filter {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+
+.tag-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.tag-filter-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tag-filter-clear {
+  padding: 4px 12px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-filter-clear:hover {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--primary-color);
+}
+
+.tag-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-filter-item {
+  padding: 6px 14px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tag-filter-item:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.tag-filter-item.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.tag-filter-item.active:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+@media (max-width: 768px) {
+  .tag-filter {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .tag-filter-header {
+    margin-bottom: 8px;
+  }
+
+  .tag-filter-label {
+    font-size: 13px;
+  }
+
+  .tag-filter-list {
+    gap: 6px;
+  }
+
+  .tag-filter-item {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}

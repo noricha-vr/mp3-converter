@@ -8,11 +8,13 @@ import { SearchBar } from './components/SearchBar';
 import { ThemeToggle } from './components/ThemeToggle';
 import { ExportImport } from './components/ExportImport';
 import { TaskDashboard } from './components/TaskDashboard';
+import { TagFilter } from './components/TagFilter';
 import './App.css';
 
 function App() {
   const { tasks, addTask, updateTask, deleteTask, importTasks, reorderTasks } = useTasks();
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [showCompleted, setShowCompleted] = useState(true);
 
@@ -22,6 +24,13 @@ function App() {
     // カテゴリフィルター
     if (selectedCategory) {
       filtered = filtered.filter(task => task.category === selectedCategory);
+    }
+
+    // タグフィルター
+    if (selectedTags.length > 0) {
+      filtered = filtered.filter(task =>
+        task.tags && selectedTags.some(tag => task.tags!.includes(tag))
+      );
     }
 
     // 検索フィルター
@@ -39,7 +48,7 @@ function App() {
     }
 
     return filtered;
-  }, [tasks, selectedCategory, searchQuery, showCompleted]);
+  }, [tasks, selectedCategory, selectedTags, searchQuery, showCompleted]);
 
   return (
     <div className="app">
@@ -60,6 +69,11 @@ function App() {
         <CategoryFilter
           selectedCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
+        />
+        <TagFilter
+          tasks={tasks}
+          selectedTags={selectedTags}
+          onTagsChange={setSelectedTags}
         />
         <ExportImport
           tasks={tasks}

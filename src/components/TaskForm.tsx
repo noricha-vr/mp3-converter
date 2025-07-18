@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { CreateTaskInput } from '../types/Task';
 import { DEFAULT_CATEGORIES } from '../types/Task';
+import { TagInput } from './TagInput';
 import './TaskForm.css';
 
 interface TaskFormProps {
@@ -11,6 +12,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
+  const [tags, setTags] = useState<string[]>([]);
   const [dueDate, setDueDate] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -21,12 +23,14 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
       title: title.trim(),
       description: description.trim() || undefined,
       category: category || undefined,
+      tags: tags.length > 0 ? tags : undefined,
       dueDate: dueDate ? new Date(dueDate) : undefined,
     });
 
     setTitle('');
     setDescription('');
     setCategory('');
+    setTags([]);
     setDueDate('');
   };
 
@@ -55,6 +59,11 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
           <option key={cat} value={cat}>{cat}</option>
         ))}
       </select>
+      <TagInput
+        tags={tags}
+        onChange={setTags}
+        placeholder="タグを追加（Enterで確定）"
+      />
       <input
         type="date"
         value={dueDate}
