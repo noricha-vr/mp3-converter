@@ -5,6 +5,7 @@ export interface Task {
   category?: string;
   dueDate?: Date;
   completed: boolean;
+  order: number;
   createdAt: Date;
   updatedAt: Date;
 }

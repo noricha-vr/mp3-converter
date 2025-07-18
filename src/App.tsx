@@ -11,7 +11,7 @@ import { TaskDashboard } from './components/TaskDashboard';
 import './App.css';
 
 function App() {
-  const { tasks, addTask, updateTask, deleteTask, importTasks } = useTasks();
+  const { tasks, addTask, updateTask, deleteTask, importTasks, reorderTasks } = useTasks();
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [showCompleted, setShowCompleted] = useState(true);
@@ -69,6 +69,7 @@ function App() {
           tasks={filteredTasks}
           onUpdateTask={updateTask}
           onDeleteTask={deleteTask}
+          onReorderTasks={reorderTasks}
         />
       </main>
       <ThemeToggle />

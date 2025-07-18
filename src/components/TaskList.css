@@ -10,3 +10,44 @@
   color: var(--text-muted);
   font-size: 16px;
 }
+
+.task-item-wrapper {
+  cursor: move;
+  transition: transform 0.2s ease;
+}
+
+.task-item-wrapper:hover {
+  transform: translateY(-2px);
+}
+
+.task-item-wrapper.dragging {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+.task-item-wrapper[draggable="true"] {
+  -webkit-user-drag: element;
+}
+
+/* ドラッグ中のドロップ領域のハイライト */
+.task-item-wrapper:not(.dragging):hover {
+  position: relative;
+}
+
+.task-item-wrapper:not(.dragging):hover::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.task-item-wrapper:not(.dragging):has(+ .dragging):hover::before,
+.task-item-wrapper:not(.dragging):hover:has(+ :not(.dragging))::before {
+  opacity: 1;
+}
