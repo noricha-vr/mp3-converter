@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Task } from '../types/Task';
+import type { Task } from '../types/Task';
 import './TaskDashboard.css';
 
 interface TaskDashboardProps {

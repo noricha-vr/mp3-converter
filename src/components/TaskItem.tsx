@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Task, DEFAULT_CATEGORIES } from '../types/Task';
+import type { Task } from '../types/Task';
+import { DEFAULT_CATEGORIES } from '../types/Task';
 import './TaskItem.css';
 
 interface TaskItemProps {

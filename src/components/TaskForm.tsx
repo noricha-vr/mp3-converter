@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { CreateTaskInput, DEFAULT_CATEGORIES } from '../types/Task';
+import type { CreateTaskInput } from '../types/Task';
+import { DEFAULT_CATEGORIES } from '../types/Task';
 import './TaskForm.css';
 
 interface TaskFormProps {

@@ -1,0 +1,20 @@
+{
+  "name": "OtoDake - タスク管理アプリ",
+  "short_name": "OtoDake",
+  "description": "シンプルで使いやすいタスク管理アプリケーション",
+  "theme_color": "#646cff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "ja"
+}

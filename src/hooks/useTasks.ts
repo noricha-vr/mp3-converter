@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { Task, CreateTaskInput, UpdateTaskInput } from '../types/Task';
+import type { Task, CreateTaskInput, UpdateTaskInput } from '../types/Task';
 
 const STORAGE_KEY = 'otodake-tasks';
 

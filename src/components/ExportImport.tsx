@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Task } from '../types/Task';
+import type { Task } from '../types/Task';
 import './ExportImport.css';
 
 interface ExportImportProps {
