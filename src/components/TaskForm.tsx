@@ -10,6 +10,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
+  const [dueDate, setDueDate] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,11 +20,13 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
       title: title.trim(),
       description: description.trim() || undefined,
       category: category || undefined,
+      dueDate: dueDate ? new Date(dueDate) : undefined,
     });
 
     setTitle('');
     setDescription('');
     setCategory('');
+    setDueDate('');
   };
 
   return (
@@ -51,6 +54,13 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
           <option key={cat} value={cat}>{cat}</option>
         ))}
       </select>
+      <input
+        type="date"
+        value={dueDate}
+        onChange={(e) => setDueDate(e.target.value)}
+        className="task-form-date"
+        placeholder="期限日"
+      />
       <button type="submit" className="task-form-button">
         タスクを追加
       </button>

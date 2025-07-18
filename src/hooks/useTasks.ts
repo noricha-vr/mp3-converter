@@ -13,6 +13,7 @@ const loadTasksFromStorage = (): Task[] => {
       ...task,
       createdAt: new Date(task.createdAt),
       updatedAt: new Date(task.updatedAt),
+      dueDate: task.dueDate ? new Date(task.dueDate) : undefined,
     }));
   } catch (error) {
     console.error('Failed to load tasks from storage:', error);
@@ -41,6 +42,7 @@ export const useTasks = () => {
       title: input.title,
       description: input.description,
       category: input.category,
+      dueDate: input.dueDate,
       completed: false,
       createdAt: new Date(),
       updatedAt: new Date(),

@@ -3,6 +3,7 @@ export interface Task {
   title: string;
   description?: string;
   category?: string;
+  dueDate?: Date;
   completed: boolean;
   createdAt: Date;
   updatedAt: Date;
@@ -12,12 +13,14 @@ export interface CreateTaskInput {
   title: string;
   description?: string;
   category?: string;
+  dueDate?: Date;
 }
 
 export interface UpdateTaskInput {
   title?: string;
   description?: string;
   category?: string;
+  dueDate?: Date;
   completed?: boolean;
 }
 

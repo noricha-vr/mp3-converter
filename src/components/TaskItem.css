@@ -65,6 +65,49 @@
   font-weight: 500;
 }
 
+.task-due-date {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.task-due-date.overdue {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+:root[data-theme='dark'] .task-due-date.overdue {
+  background-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.task-due-date.due-today {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+:root[data-theme='dark'] .task-due-date.due-today {
+  background-color: #78350f;
+  color: #fcd34d;
+}
+
+.task-due-date.due-soon {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+:root[data-theme='dark'] .task-due-date.due-soon {
+  background-color: #1e3a8a;
+  color: #93bbfe;
+}
+
+.task-due-date.due-later {
+  background-color: var(--category-bg);
+  color: var(--category-text);
+}
+
 .task-description {
   margin: 0;
   color: var(--text-secondary);
@@ -133,7 +176,8 @@
 
 .task-input-title,
 .task-input-description,
-.task-input-select {
+.task-input-select,
+.task-input-date {
   width: 100%;
   padding: 8px 12px;
   border: 1px solid var(--border-color);
@@ -146,7 +190,8 @@
 
 .task-input-title:focus,
 .task-input-description:focus,
-.task-input-select:focus {
+.task-input-select:focus,
+.task-input-date:focus {
   outline: none;
   border-color: var(--primary-color);
 }
