@@ -1,14 +1,14 @@
 .task-item {
-  background: #ffffff;
+  background: var(--bg-secondary);
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   transition: all 0.2s ease;
 }
 
 .task-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-hover);
 }
 
 .task-item.completed {
@@ -17,7 +17,7 @@
 
 .task-item.completed .task-title {
   text-decoration: line-through;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .task-view {
@@ -53,12 +53,12 @@
 .task-title {
   margin: 0;
   font-size: 18px;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .task-category {
-  background-color: #e5e7eb;
-  color: #4b5563;
+  background-color: var(--category-bg);
+  color: var(--category-text);
   padding: 2px 8px;
   border-radius: 12px;
   font-size: 12px;
@@ -67,7 +67,7 @@
 
 .task-description {
   margin: 0;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -90,39 +90,39 @@
 }
 
 .btn-edit {
-  background-color: #3b82f6;
+  background-color: var(--primary-color);
   color: white;
 }
 
 .btn-edit:hover {
-  background-color: #2563eb;
+  background-color: var(--primary-hover);
 }
 
 .btn-delete {
-  background-color: #ef4444;
+  background-color: var(--danger-color);
   color: white;
 }
 
 .btn-delete:hover {
-  background-color: #dc2626;
+  background-color: var(--danger-hover);
 }
 
 .btn-save {
-  background-color: #10b981;
+  background-color: var(--success-color);
   color: white;
 }
 
 .btn-save:hover {
-  background-color: #059669;
+  background-color: var(--success-hover);
 }
 
 .btn-cancel {
-  background-color: #6b7280;
+  background-color: var(--text-muted);
   color: white;
 }
 
 .btn-cancel:hover {
-  background-color: #4b5563;
+  background-color: var(--text-secondary);
 }
 
 .task-edit {
@@ -136,18 +136,19 @@
 .task-input-select {
   width: 100%;
   padding: 8px 12px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   font-family: inherit;
   font-size: 16px;
-  background-color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .task-input-title:focus,
 .task-input-description:focus,
 .task-input-select:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: var(--primary-color);
 }
 
 .task-input-description {

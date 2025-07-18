@@ -1,9 +1,9 @@
 .search-bar {
-  background: #ffffff;
+  background: var(--bg-secondary);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -21,24 +21,25 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  color: #9ca3af;
+  color: var(--text-muted);
   pointer-events: none;
 }
 
 .search-input {
   width: 100%;
   padding: 12px 16px 12px 48px;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--border-color);
   border-radius: 8px;
   font-family: inherit;
   font-size: 16px;
   transition: border-color 0.2s;
-  background-color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: var(--primary-color);
 }
 
 .search-checkbox-label {
@@ -46,7 +47,7 @@
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: #374151;
+  color: var(--text-primary);
   white-space: nowrap;
   cursor: pointer;
   user-select: none;

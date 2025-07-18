@@ -1,11 +1,11 @@
 .task-stats {
   display: flex;
   justify-content: space-around;
-  background: #ffffff;
+  background: var(--bg-secondary);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .stat-item {
@@ -17,22 +17,22 @@
   display: block;
   font-size: 32px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .stat-value.completed {
-  color: #10b981;
+  color: var(--success-color);
 }
 
 .stat-value.pending {
-  color: #f59e0b;
+  color: var(--warning-color, #f59e0b);
 }
 
 .stat-label {
   display: block;
   font-size: 14px;
-  color: #6b7280;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 

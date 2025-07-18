@@ -5,6 +5,7 @@ import { TaskList } from './components/TaskList';
 import { TaskStats } from './components/TaskStats';
 import { CategoryFilter } from './components/CategoryFilter';
 import { SearchBar } from './components/SearchBar';
+import { ThemeToggle } from './components/ThemeToggle';
 import './App.css';
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
           onDeleteTask={deleteTask}
         />
       </main>
+      <ThemeToggle />
     </div>
   );
 }

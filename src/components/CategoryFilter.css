@@ -1,15 +1,15 @@
 .category-filter {
-  background: #ffffff;
+  background: var(--bg-secondary);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .category-filter-title {
   margin: 0 0 16px 0;
   font-size: 16px;
-  color: #374151;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -21,10 +21,10 @@
 
 .category-filter-button {
   padding: 8px 16px;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--border-color);
   border-radius: 20px;
-  background-color: #ffffff;
-  color: #4b5563;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -32,13 +32,13 @@
 }
 
 .category-filter-button:hover {
-  border-color: #3b82f6;
-  color: #3b82f6;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .category-filter-button.active {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   color: white;
 }
 
