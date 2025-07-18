@@ -43,10 +43,26 @@
   flex: 1;
 }
 
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
 .task-title {
-  margin: 0 0 4px 0;
+  margin: 0;
   font-size: 18px;
   color: #333;
+}
+
+.task-category {
+  background-color: #e5e7eb;
+  color: #4b5563;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .task-description {
@@ -116,17 +132,20 @@
 }
 
 .task-input-title,
-.task-input-description {
+.task-input-description,
+.task-input-select {
   width: 100%;
   padding: 8px 12px;
   border: 1px solid #d1d5db;
   border-radius: 4px;
   font-family: inherit;
   font-size: 16px;
+  background-color: white;
 }
 
 .task-input-title:focus,
-.task-input-description:focus {
+.task-input-description:focus,
+.task-input-select:focus {
   outline: none;
   border-color: #3b82f6;
 }

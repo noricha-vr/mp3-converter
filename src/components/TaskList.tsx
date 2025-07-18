@@ -5,7 +5,7 @@ import './TaskList.css';
 
 interface TaskListProps {
   tasks: Task[];
-  onUpdateTask: (id: string, updates: { title?: string; description?: string; completed?: boolean }) => void;
+  onUpdateTask: (id: string, updates: { title?: string; description?: string; category?: string; completed?: boolean }) => void;
   onDeleteTask: (id: string) => void;
 }
 

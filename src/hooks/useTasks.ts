@@ -40,6 +40,7 @@ export const useTasks = () => {
       id: Date.now().toString(),
       title: input.title,
       description: input.description,
+      category: input.category,
       completed: false,
       createdAt: new Date(),
       updatedAt: new Date(),
