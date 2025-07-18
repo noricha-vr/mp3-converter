@@ -7,6 +7,7 @@ import { CategoryFilter } from './components/CategoryFilter';
 import { SearchBar } from './components/SearchBar';
 import { ThemeToggle } from './components/ThemeToggle';
 import { ExportImport } from './components/ExportImport';
+import { TaskDashboard } from './components/TaskDashboard';
 import './App.css';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
       </header>
       <main className="app-main">
         <TaskStats tasks={filteredTasks} />
+        <TaskDashboard tasks={tasks} />
         <TaskForm onSubmit={addTask} />
         <SearchBar
           searchQuery={searchQuery}

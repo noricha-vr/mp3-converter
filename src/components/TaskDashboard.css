@@ -1,0 +1,253 @@
+.task-dashboard {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+.dashboard-title {
+  margin: 0 0 24px 0;
+  font-size: 20px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.dashboard-card.wide {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Progress Circle */
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 2.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.circle.progress-excellent {
+  stroke: var(--success-color);
+}
+
+.circle.progress-good {
+  stroke: #60a5fa;
+}
+
+.circle.progress-fair {
+  stroke: #fbbf24;
+}
+
+.circle.progress-poor {
+  stroke: var(--danger-color);
+}
+
+.percentage {
+  fill: var(--text-primary);
+  font-size: 0.5em;
+  text-anchor: middle;
+  font-weight: 700;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.card-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Urgent Tasks */
+.urgent-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.urgent-item {
+  text-align: center;
+}
+
+.urgent-count {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.urgent-count.overdue {
+  color: var(--danger-color);
+}
+
+.urgent-count.today {
+  color: #f59e0b;
+}
+
+.urgent-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Completion Trend */
+.trend-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.trend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trend-period {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.trend-count {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.avg-completion {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Category Breakdown */
+.category-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.category-name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.category-count {
+  color: var(--text-secondary);
+}
+
+.category-progress {
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.category-progress-bar {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+@media (max-width: 768px) {
+  .task-dashboard {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .dashboard-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .dashboard-card {
+    padding: 16px;
+  }
+
+  .progress-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .urgent-count {
+    font-size: 28px;
+  }
+
+  .trend-count {
+    font-size: 20px;
+  }
+}
