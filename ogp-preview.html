@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGP Image Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div style="
+        width: 1200px;
+        height: 630px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #5B21B6 0%, #4C1D95 100%);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    ">
+        <!-- Background pattern -->
+        <div style="
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.3) 0%, transparent 50%);
+        "></div>
+        
+        <!-- Main content -->
+        <div style="text-align: center; z-index: 1;">
+            <!-- Logo -->
+            <div style="
+                width: 160px;
+                height: 160px;
+                margin: 0 auto 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+            ">
+                <svg width="120" height="120" viewBox="0 0 512 512">
+                    <rect width="512" height="512" rx="100" fill="white" fill-opacity="0.9" />
+                    <g transform="translate(140, 80)">
+                        <rect x="90" y="100" width="20" height="180" rx="10" fill="#5B21B6"/>
+                        <circle cx="70" cy="280" r="45" fill="#5B21B6"/>
+                        <path d="M90 100 Q90 80 110 80 L180 60 Q200 54 200 70 L200 80 Q200 96 180 100 L110 120 Q90 124 90 100" fill="#5B21B6"/>
+                    </g>
+                    <g transform="translate(280, 200)">
+                        <path d="M0 0 L60 0 M60 0 L40 -20 M60 0 L40 20" stroke="#5B21B6" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </g>
+                    <g transform="translate(256, 400)">
+                        <text x="0" y="10" font-family="SF Pro Display, -apple-system, sans-serif" font-size="66" font-weight="800" text-anchor="middle" fill="#5B21B6">MP3</text>
+                    </g>
+                </svg>
+            </div>
+            
+            <!-- Title -->
+            <h1 style="
+                font-size: 84px;
+                font-weight: 900;
+                margin: 0 0 24px;
+                letter-spacing: -2px;
+                text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            ">
+                MP3 Converter
+            </h1>
+            
+            <!-- Subtitle -->
+            <p style="
+                font-size: 36px;
+                margin: 0 0 56px;
+                opacity: 0.95;
+                font-weight: 300;
+            ">
+                Convert any media file to MP3 instantly
+            </p>
+            
+            <!-- Features -->
+            <div style="
+                display: flex;
+                gap: 48px;
+                justify-content: center;
+                font-size: 26px;
+                font-weight: 500;
+            ">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        background: rgba(255,255,255,0.2);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    ">✓</div>
+                    <span>100% Free</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        background: rgba(255,255,255,0.2);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    ">✓</div>
+                    <span>No Upload</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        background: rgba(255,255,255,0.2);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    ">✓</div>
+                    <span>Fast & Secure</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- URL -->
+        <div style="
+            position: absolute;
+            bottom: 36px;
+            font-size: 28px;
+            opacity: 0.7;
+            font-weight: 500;
+        ">
+            mp3.kojin.works
+        </div>
+    </div>
+</body>
+</html>

@@ -8,6 +8,9 @@
   - Generated package-lock.json to ensure Cloudflare Pages runs npm install automatically
   - Added .nvmrc file to specify Node.js 20.19.0 (required by Vite 7.0.5)
   - Added .npmrc to handle optional dependencies issues with Rollup
+- Regenerated OGP image with improved design
+  - Created ogp-preview.html for OGP image preview
+  - Added Playwright script for automated OGP image generation
 
 ### Added
 - Added WebAssembly-powered local processing indicator on homepage
