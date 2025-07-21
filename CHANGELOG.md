@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### Added
+- トップページにWebAssemblyを使用した完全ローカル処理の表記を追加
+  - 🔒 100% ローカル処理のバッジを表示
+  - プライバシー保護の説明文を追加（ファイルがサーバーにアップロードされないことを明記）
+- TailwindCSSを導入し、すべてのスタイルをTailwindクラスに変換
+  - App.cssを削除し、すべてのスタイルをTailwindユーティリティクラスで実装
+  - Converter.tsxのスタイルもTailwindクラスに変換
+  - CSSファイルの使用を最小限に（index.cssのTailwindディレクティブのみ）
+
 ### Fixed
 - Cloudflare Pages デプロイ時の25MBファイルサイズ制限エラーを修正
   - FFmpeg WASMファイル（約32MB）をCDNから読み込むように変更

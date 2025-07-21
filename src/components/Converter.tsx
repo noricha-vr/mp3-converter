@@ -95,31 +95,32 @@ export function Converter() {
   };
 
   return (
-    <div className="converter-container">
-      <div className="file-input-wrapper">
+    <div className="bg-white p-12 rounded-xl shadow-md w-full">
+      <div className="mb-8">
         <input
           type="file"
           id="file-input"
           accept="audio/*,video/*"
           onChange={handleFileSelect}
           disabled={isConverting || isLoading}
+          className="hidden"
         />
-        <label htmlFor="file-input" className="file-input-label">
+        <label htmlFor="file-input" className="block p-4 px-8 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg text-center cursor-pointer transition-all duration-300 hover:bg-gray-200 hover:border-gray-400">
           {file ? file.name : 'Choose a file'}
         </label>
       </div>
       
-      {error && <div className="error-message">{error}</div>}
+      {error && <div className="text-red-600 mb-4 text-center">{error}</div>}
       
       {(isConverting || progress > 0) && (
-        <div className="progress-bar">
-          <div className="progress-fill" style={{ width: `${progress}%` }}></div>
-          <span className="progress-text">{progress}%</span>
+        <div className="w-full h-6 bg-gray-100 rounded-full my-4 relative overflow-hidden">
+          <div className="h-full bg-green-500 transition-all duration-300 ease-out" style={{ width: `${progress}%` }}></div>
+          <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-gray-700 text-sm">{progress}%</span>
         </div>
       )}
       
       <button
-        className="convert-button"
+        className="w-full py-4 px-8 text-lg font-bold text-white bg-blue-500 border-none rounded-lg cursor-pointer transition-colors duration-300 hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-not-allowed disabled:opacity-60"
         onClick={handleConvert}
         disabled={!file || isConverting || isLoading}
       >
