@@ -75,7 +75,7 @@ const OgpImage: React.FC = () => {
           margin: '0 0 48px',
           opacity: 0.9
         }}>
-          動画・音声ファイルを簡単にMP3に変換
+          Convert video and audio files to MP3 easily
         </p>
         
         {/* Features */}
@@ -87,15 +87,15 @@ const OgpImage: React.FC = () => {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontSize: '28px' }}>✅</span>
-            <span>無料</span>
+            <span>Free</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontSize: '28px' }}>✅</span>
-            <span>高速変換</span>
+            <span>Fast Conversion</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontSize: '28px' }}>✅</span>
-            <span>ブラウザで完結</span>
+            <span>Browser-based</span>
           </div>
         </div>
       </div>

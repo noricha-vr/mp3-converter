@@ -10,10 +10,10 @@ function App() {
           <div className="flex items-start gap-4">
             <span className="text-2xl block flex-shrink-0 mt-1">🔒</span>
             <div className="flex-1">
-              <span className="block font-semibold text-base text-white/95 mb-1">100% ローカル処理</span>
+              <span className="block font-semibold text-base text-white/95 mb-1">100% Local Processing</span>
               <p className="m-0 text-sm leading-relaxed text-white/80">
-                WebAssemblyを使用して、すべての処理がお使いのブラウザ内で完結します。
-                ファイルがサーバーにアップロードされることはありません。
+                All processing is done in your browser using WebAssembly.
+                Your files are never uploaded to any server.
               </p>
             </div>
           </div>

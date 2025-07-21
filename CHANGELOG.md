@@ -3,34 +3,40 @@
 ## [Unreleased]
 
 ### Added
-- トップページにWebAssemblyを使用した完全ローカル処理の表記を追加
-  - 🔒 100% ローカル処理のバッジを表示
-  - プライバシー保護の説明文を追加（ファイルがサーバーにアップロードされないことを明記）
-- TailwindCSSを導入し、すべてのスタイルをTailwindクラスに変換
-  - App.cssを削除し、すべてのスタイルをTailwindユーティリティクラスで実装
-  - Converter.tsxのスタイルもTailwindクラスに変換
-  - CSSファイルの使用を最小限に（index.cssのTailwindディレクティブのみ）
-
-### Fixed
-- Cloudflare Pages デプロイ時の25MBファイルサイズ制限エラーを修正
-  - FFmpeg WASMファイル（約32MB）をCDNから読み込むように変更
-  - ビルド結果から大きなWASMファイルを除外
+- Added WebAssembly-powered local processing indicator on homepage
+  - 🔒 100% Local Processing badge
+  - Privacy protection message explaining that files are never uploaded to servers
+- Introduced TailwindCSS and converted all styles to utility classes
+  - Removed App.css and implemented all styles with Tailwind utilities
+  - Converted Converter.tsx styles to Tailwind classes
+  - Minimized CSS file usage (only index.css with Tailwind directives)
 
 ### Changed
-- プロジェクト名を `otodake3` から `mp3-converter` に変更
-- README.md のリポジトリURLを更新
-- ドメインを `mp3.kojin.works` に更新
-  - index.html のメタタグ（canonical、OGP、Twitter Card）のURLを更新
-  - sitemap.xml のURLを更新
+- Unified project language to English
+  - Converted all UI text to English
+  - Updated HTML meta tags and structured data to English
+  - Translated OGP image content to English
+
+### Fixed
+- Fixed Cloudflare Pages deployment 25MB file size limit error
+  - Loading FFmpeg WASM file (~32MB) from CDN
+  - Excluded large WASM files from build output
+
+### Changed
+- Renamed project from `otodake3` to `mp3-converter`
+- Updated repository URL in README.md
+- Updated domain to `mp3.kojin.works`
+  - Updated meta tags (canonical, OGP, Twitter Card) URLs in index.html
+  - Updated sitemap.xml URLs
 
 ### Added
-- SEO対策を実装
-  - カスタムSVGファビコンを作成（音符と変換矢印のデザイン）
-  - OGP画像を生成（1200x630px、HTMLコンポーネントからPlaywrightでキャプチャ）
-  - 包括的なメタタグを追加（SEO、OGP、Twitter Card）
-  - 構造化データ（JSON-LD）を実装
-  - robots.txt と sitemap.xml を作成
-- SEO対策のSOWドキュメントを作成（`docs/tmp/seo-sow.md`）
+- Implemented SEO optimization
+  - Created custom SVG favicon (music note and conversion arrow design)
+  - Generated OGP image (1200x630px, captured from HTML component using Playwright)
+  - Added comprehensive meta tags (SEO, OGP, Twitter Card)
+  - Implemented structured data (JSON-LD)
+  - Created robots.txt and sitemap.xml
+- Created SEO SOW document (`docs/tmp/seo-sow.md`)
 
 ## [2.0.2] - 2025-07-21
 
