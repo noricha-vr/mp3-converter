@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+- プロジェクト名を `otodake3` から `mp3-converter` に変更
+- README.md のリポジトリURLを更新
+
 ## [2.0.2] - 2025-07-21
 
 ### Changed

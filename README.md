@@ -28,8 +28,8 @@ A simple web application to convert video and audio files to MP3 format using FF
 
 ```bash
 # Clone the repository
-git clone [repository-url]
-cd otodake3
+git clone https://github.com/noricha-vr/mp3-converter
+cd mp3-converter
 
 # Install dependencies
 bun install
