@@ -10,6 +10,9 @@
 ### Changed
 - プロジェクト名を `otodake3` から `mp3-converter` に変更
 - README.md のリポジトリURLを更新
+- ドメインを `mp3.kojin.works` に更新
+  - index.html のメタタグ（canonical、OGP、Twitter Card）のURLを更新
+  - sitemap.xml のURLを更新
 
 ### Added
 - SEO対策を実装
