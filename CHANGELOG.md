@@ -11,6 +11,10 @@
 - Regenerated OGP image with improved design
   - Created ogp-preview.html for OGP image preview
   - Added Playwright script for automated OGP image generation
+- Fixed FFmpeg loading error "Conversion failed: Unknown error"
+  - Changed FFmpeg CDN URLs from UMD to ESM format
+  - Added preview headers to vite.config.js for CORS support
+  - Created E2E test script for automated conversion testing
 
 ### Added
 - Added WebAssembly-powered local processing indicator on homepage
