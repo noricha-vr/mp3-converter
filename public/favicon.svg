@@ -1,18 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Background circle -->
-  <circle cx="256" cy="256" r="240" fill="#4F46E5" />
+  <!-- Modern rounded square background -->
+  <rect width="512" height="512" rx="100" fill="#5B21B6" />
   
-  <!-- Music note -->
-  <g transform="translate(120, 100)">
-    <path d="M80 120v160c-8.8-12.2-23.3-20-40-20-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48V160l96-32V80L80 120z" fill="white"/>
-    <ellipse cx="136" cy="112" rx="48" ry="16" fill="white"/>
+  <!-- Simplified music note icon -->
+  <g transform="translate(140, 80)">
+    <rect x="90" y="100" width="20" height="180" rx="10" fill="white"/>
+    <circle cx="70" cy="280" r="45" fill="white"/>
+    <path d="M90 100 Q90 80 110 80 L180 60 Q200 54 200 70 L200 80 Q200 96 180 100 L110 120 Q90 124 90 100" fill="white"/>
   </g>
   
-  <!-- Arrow -->
-  <g transform="translate(256, 256)">
-    <path d="M-20 -40 L20 -40 L20 -20 L50 0 L20 20 L20 40 L-20 40 L-20 20 L-50 20 L-50 -20 L-20 -20 Z" fill="white"/>
+  <!-- Modern arrow -->
+  <g transform="translate(280, 200)">
+    <path d="M0 0 L60 0 M60 0 L40 -20 M60 0 L40 20" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </g>
   
-  <!-- MP3 text -->
-  <text x="256" y="380" font-family="Arial, sans-serif" font-size="64" font-weight="bold" text-anchor="middle" fill="white">MP3</text>
+  <!-- Clean MP3 text -->
+  <g transform="translate(256, 400)">
+    <rect x="-90" y="-45" width="180" height="70" rx="35" fill="white" opacity="0.15"/>
+    <text x="0" y="10" font-family="SF Pro Display, -apple-system, sans-serif" font-size="66" font-weight="800" text-anchor="middle" fill="white">MP3</text>
+  </g>
 </svg>
