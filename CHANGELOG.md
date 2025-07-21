@@ -24,6 +24,11 @@
   - Removed App.css and implemented all styles with Tailwind utilities
   - Converted Converter.tsx styles to Tailwind classes
   - Minimized CSS file usage (only index.css with Tailwind directives)
+- Added comprehensive E2E test suite using Playwright
+  - 7 test cases covering all major functionality
+  - Tests for UI display, file validation, conversion process, and error handling
+  - Configured test scripts in package.json
+  - Updated README with testing documentation
 
 ### Changed
 - Unified project language to English
