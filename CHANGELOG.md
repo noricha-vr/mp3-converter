@@ -1,103 +1,61 @@
 # Changelog
 
-## [1.0.0] - 2025-07-18
+## [2.0.2] - 2025-07-21
 
-### 追加
-- タスクのラベル機能（タグ付け）
-  - 複数タグの追加・削除機能
-  - タグによるフィルタリング機能
-  - TagInputコンポーネントで直感的なタグ管理
-  - TagFilterコンポーネントでタグ選択フィルタリング
-  - タグの視覚的表示とダークモード対応
+### Changed
+- Cleaned up project structure by removing unnecessary files and directories
+- Removed empty directories: `src/contexts/`, `src/hooks/`, `src/types/`
+- Removed unused assets: `src/assets/react.svg`, `public/vite.svg`
+- Removed test video directory: `videos/`
+- Removed temporary documentation: `docs/tmp/`, `docs/plan.md`
+- Optimized project to focus solely on MP3 conversion functionality
 
-## [0.9.0] - 2025-07-18
+### Technical
+- All dependencies in package.json are actively used (React, FFmpeg.wasm, TypeScript, Vite, ESLint)
+- CSS files are properly organized with minimal duplication
 
-### 追加
-- タスクの並び替え機能
-  - ドラッグ＆ドロップで簡単に並び替え
-  - 並び順の自動保存とローカルストレージへの永続化
-  - スムーズなアニメーションとビジュアルフィードバック
-  - 新しいorderフィールドでタスクの順序を管理
+## [2.0.1] - 2025-07-19
 
-## [0.8.0] - 2025-07-18
+### Fixed
+- Fixed FFmpeg.wasm loading issue with Vite by using proper import mechanism
+- Used Vite's `?url` imports for FFmpeg core files instead of Blob URLs
+- Added @ffmpeg/core dependency for proper file loading
+- Fixed CORS and cross-origin isolation issues
 
-### 追加
-- PWA対応（プログレッシブウェブアプリ）
-  - Service Workerによるオフライン機能
-  - manifest.jsonでアプリのインストール対応
-  - キャッシュ戦略で高速起動
-  - ホーム画面への追加機能
+### Technical Details
+- Imports FFmpeg core and WASM files using Vite's URL import syntax
+- Maintains Cross-Origin-Embedder-Policy and Cross-Origin-Opener-Policy headers
+- Successfully converts both audio and video files to MP3
 
-## [0.7.0] - 2025-07-18
+## [2.0.0] - 2025-07-19
 
-### 追加
-- 統計・分析ダッシュボード
-  - 全体の進捗率の円グラフ表示
-  - 緊急タスク（期限切れ・本日期限）の強調表示
-  - 完了トレンド（週間・月間の完了数）
-  - カテゴリ別統計とプログレスバー
-  - 平均完了時間の計算と表示
+### Breaking Changes
+- Complete rewrite: Changed from task management app to MP3 converter
+- Removed all task management features
+- Removed theme toggle and PWA functionality
+- Simplified architecture for single purpose
 
-## [0.6.0] - 2025-07-18
+### Added
+- MP3 conversion functionality using FFmpeg.wasm
+- Support for video to MP3 conversion
+- Support for audio to MP3 conversion
+- Real-time conversion progress bar
+- Automatic download after conversion
+- Client-side processing (no server required)
 
-### 追加
-- エクスポート・インポート機能
-  - タスクデータをJSON形式でエクスポート
-  - JSONファイルからタスクデータをインポート
-  - 日付付きファイル名での保存
-  - インポート時のデータ検証
+### Removed
+- Task management components
+- Category and tag filtering
+- Search functionality
+- Statistics dashboard
+- Export/Import features
+- Dark mode
+- PWA/Service Worker
+- Local storage persistence
 
-## [0.5.0] - 2025-07-18
-
-### 追加
-- 期限管理機能
-  - タスクに期限日を設定可能
-  - 期限の状態表示（期限切れ、今日、明日、3日以内、それ以降）
-  - 期限の視覚的な強調表示（色分け）
-  - 完了タスクでは期限を非表示
-
-## [0.4.0] - 2025-07-18
-
-### 追加
-- ダークモード対応
-  - ライト/ダークテーマの切り替え機能
-  - システムテーマに基づく自動切り替え
-  - テーマ設定の永続化（ローカルストレージ）
-  - フローティングテーマ切り替えボタン
-  - すべてのコンポーネントでCSS変数を使用
-
-## [0.3.0] - 2025-07-18
-
-### 追加
-- 検索・フィルター機能
-  - タスクのタイトルと説明での検索
-  - 完了タスクの表示/非表示切り替え
-  - 検索アイコン付きの洗練された検索バー
-
-## [0.2.0] - 2025-07-18
-
-### 追加
-- タスクのカテゴリ分け機能
-  - 仕事、プライベート、学習、健康、買い物、その他のカテゴリ
-  - カテゴリでのフィルタリング機能
-  - カテゴリ表示のビジュアルタグ
-
-### 改善
-- タスク編集時にカテゴリも変更可能に
-- タスク統計がフィルター結果を反映するよう改善
-
-## [0.1.0] - 2025-07-18
-
-### 追加
-- タスク管理アプリケーション「OtoDake」の初期リリース
-- タスクのCRUD操作（作成、読み込み、更新、削除）
-- ローカルストレージでのデータ永続化
-- レスポンシブデザインの実装
-- タスク統計の表示（全タスク数、完了数、未完了数、達成率）
-- TypeScriptとReactを使用したモダンなUI
-
-### 技術スタック
+### Tech Stack
 - React 19.1.0
 - TypeScript 5.8.3
 - Vite 7.0.4
-- Bun パッケージマネージャー
+- FFmpeg.wasm 0.12.15
+- Bun package manager

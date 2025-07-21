@@ -1,101 +1,69 @@
-# OtoDake - シンプルなタスク管理アプリ
+# MP3 Converter
 
-OtoDakeは、React + TypeScript + Viteで構築されたシンプルで使いやすいタスク管理アプリケーションです。
+A simple web application to convert video and audio files to MP3 format using FFmpeg.wasm.
 
-## 機能
+## Features
 
-- ✅ タスクの作成、編集、削除
-- ✅ タスクの完了/未完了の切り替え
-- ✅ ローカルストレージでのデータ永続化
-- ✅ レスポンシブデザイン
-- ✅ タスク統計の表示（全タスク数、完了数、未完了数、達成率）
-- ✅ タスクのカテゴリ分け機能
-  - 仕事、プライベート、学習、健康、買い物、その他
-  - カテゴリでのフィルタリング
-- ✅ 検索・フィルター機能
-  - タイトルと説明での検索
-  - 完了タスクの表示/非表示切り替え
-- ✅ ダークモード対応
-  - ライト/ダークテーマの自動切り替え
-  - テーマ設定の保存
-- ✅ 期限管理機能
-  - タスクの期限設定
-  - 期限状態の視覚的表示（期限切れ、今日、明日など）
-- ✅ エクスポート・インポート機能
-  - タスクデータのJSON形式でのエクスポート
-  - JSONファイルからのインポート
-- ✅ 統計・分析ダッシュボード
-  - 全体の進捗率の視覚的表示（円グラフ）
-  - 緊急タスクの表示（期限切れ・本日期限）
-  - 完了トレンド（週間・月間）
-  - カテゴリ別統計とプログレスバー
-  - 平均完了時間の表示
-- ✅ PWA対応（プログレッシブウェブアプリ）
-  - オフライン機能（Service Worker）
-  - アプリのインストール機能
-  - キャッシュ機能で高速起動
-- ✅ タスクの並び替え機能
-  - ドラッグ＆ドロップで簡単並び替え
-  - 並び順の自動保存
-  - スムーズなアニメーション
-- ✅ タスクのラベル機能（タグ付け）
-  - 複数タグの追加・削除
-  - タグによるフィルタリング
-  - タグの視覚的表示
+- ✅ Convert video files to MP3
+- ✅ Convert audio files to MP3
+- ✅ Progress bar showing conversion status
+- ✅ Client-side processing (no server required)
+- ✅ Automatic download after conversion
 
-## 技術スタック
+## Tech Stack
 
-- **フレームワーク**: React 19.1.0
-- **言語**: TypeScript 5.8.3
-- **ビルドツール**: Vite 7.0.4
-- **パッケージマネージャー**: Bun
+- **Framework**: React 19.1.0
+- **Language**: TypeScript 5.8.3
+- **Build Tool**: Vite 7.0.4
+- **Package Manager**: Bun
+- **Conversion Engine**: FFmpeg.wasm
 
-## セットアップ
+## Setup
 
-### 前提条件
+### Prerequisites
 
-- Bun がインストールされていること
+- Bun installed on your system
 
-### インストール
+### Installation
 
 ```bash
-# リポジトリをクローン
+# Clone the repository
 git clone [repository-url]
 cd otodake3
 
-# 依存関係をインストール
+# Install dependencies
 bun install
 ```
 
-### 開発サーバーの起動
+### Development Server
 
 ```bash
 bun run dev
 ```
 
-ブラウザで http://localhost:5173 を開いてアプリケーションにアクセスできます。
+Open http://localhost:5173 in your browser to access the application.
 
-### ビルド
+### Build
 
 ```bash
 bun run build
 ```
 
-ビルド成果物は `dist` ディレクトリに生成されます。
+Build artifacts will be generated in the `dist` directory.
 
-### プレビュー
+### Preview
 
 ```bash
 bun run preview
 ```
 
-## 使い方
+## Usage
 
-1. **タスクの追加**: フォームにタイトルと説明（オプション）を入力して「タスクを追加」ボタンをクリック
-2. **タスクの編集**: タスクアイテムの「編集」ボタンをクリックして内容を変更
-3. **タスクの完了**: チェックボックスをクリックしてタスクを完了/未完了に切り替え
-4. **タスクの削除**: 「削除」ボタンをクリックしてタスクを削除
+1. Click "Choose a file" to select a video or audio file
+2. Click "Convert to MP3" to start the conversion
+3. Wait for the conversion to complete (progress bar shows status)
+4. The MP3 file will be automatically downloaded when ready
 
-## ライセンス
+## License
 
 MIT
