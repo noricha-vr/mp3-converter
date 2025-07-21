@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mp3-converter.example.com/sitemap.xml

@@ -2,9 +2,23 @@
 
 ## [Unreleased]
 
+### Fixed
+- Cloudflare Pages デプロイ時の25MBファイルサイズ制限エラーを修正
+  - FFmpeg WASMファイル（約32MB）をCDNから読み込むように変更
+  - ビルド結果から大きなWASMファイルを除外
+
 ### Changed
 - プロジェクト名を `otodake3` から `mp3-converter` に変更
 - README.md のリポジトリURLを更新
+
+### Added
+- SEO対策を実装
+  - カスタムSVGファビコンを作成（音符と変換矢印のデザイン）
+  - OGP画像を生成（1200x630px、HTMLコンポーネントからPlaywrightでキャプチャ）
+  - 包括的なメタタグを追加（SEO、OGP、Twitter Card）
+  - 構造化データ（JSON-LD）を実装
+  - robots.txt と sitemap.xml を作成
+- SEO対策のSOWドキュメントを作成（`docs/tmp/seo-sow.md`）
 
 ## [2.0.2] - 2025-07-21
 

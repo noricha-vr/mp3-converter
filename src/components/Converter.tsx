@@ -1,10 +1,6 @@
 import { useState, useRef } from 'react';
 import { FFmpeg } from '@ffmpeg/ffmpeg';
 import { fetchFile } from '@ffmpeg/util';
-// @ts-ignore
-import coreURL from '@ffmpeg/core?url';
-// @ts-ignore
-import wasmURL from '@ffmpeg/core/wasm?url';
 
 export function Converter() {
   const [file, setFile] = useState<File | null>(null);
@@ -21,10 +17,10 @@ export function Converter() {
     setError('');
 
     try {
-      // Load using Vite imported URLs
+      // Load from CDN
       await ffmpeg.load({
-        coreURL,
-        wasmURL,
+        coreURL: 'https://unpkg.com/@ffmpeg/core@0.12.10/dist/umd/ffmpeg-core.js',
+        wasmURL: 'https://unpkg.com/@ffmpeg/core@0.12.10/dist/umd/ffmpeg-core.wasm',
       });
       
       setIsLoading(false);
