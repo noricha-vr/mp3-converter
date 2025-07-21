@@ -4,8 +4,8 @@
 
 ### Fixed
 - Fixed Cloudflare Pages build error due to missing dependencies
-  - Created wrangler.toml configuration file
-  - Added npm install command before build command to ensure TypeScript compiler is available
+  - Created wrangler.toml configuration file (later removed)
+  - Generated package-lock.json to ensure Cloudflare Pages runs npm install automatically
 
 ### Added
 - Added WebAssembly-powered local processing indicator on homepage
