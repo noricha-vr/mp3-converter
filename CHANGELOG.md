@@ -6,7 +6,8 @@
 - Fixed Cloudflare Pages build error due to missing dependencies
   - Created wrangler.toml configuration file (later removed)
   - Generated package-lock.json to ensure Cloudflare Pages runs npm install automatically
-  - Added .nvmrc file to specify Node.js 20.18.2 LTS version to avoid Rollup compatibility issues with Node.js 22
+  - Added .nvmrc file to specify Node.js 20.19.0 (required by Vite 7.0.5)
+  - Added .npmrc to handle optional dependencies issues with Rollup
 
 ### Added
 - Added WebAssembly-powered local processing indicator on homepage
