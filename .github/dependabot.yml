@@ -1,0 +1,18 @@
+# Dependabot の設定（週 1 回の依存更新。CI が無いリポなので自動マージは入れない）
+# ロックファイルは bun.lock に一本化しているので、エコシステムは bun。
+# bun は Dependabot の security updates に未対応のため、version updates だけを設定する。
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 2
+    groups:
+      minor-and-patch:                 # 週 1 回の更新は patch と minor を 1 本にまとめる
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+    labels: ["dependencies"]
