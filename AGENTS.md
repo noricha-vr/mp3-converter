@@ -94,7 +94,7 @@ The application uses FFmpeg.wasm for media conversion. Key considerations:
    - Automatic deployment on push to main branch
    - Build command: `npm run build`
    - Output directory: `dist`
-   - Required: `package-lock.json` for dependency installation
+   - Dependencies: `bun.lock` only (Pages runs `bun install --frozen-lockfile` when it exists). Do not add `package-lock.json`; update the lock with `bun install` and commit it with `package.json`
 
 3. **Vite Configuration**:
    - FFmpeg modules excluded from optimization
@@ -121,7 +121,7 @@ Test configuration: `playwright.config.js`
    - Check browser console for cross-origin errors
 
 2. **Build Failures on Cloudflare**:
-   - Ensure `package-lock.json` exists
+   - `lockfile had changes, but lockfile is frozen`: run `bun install` and commit `bun.lock`
    - Verify Node.js version matches `.nvmrc`
    - Check for Rollup compatibility issues
 
