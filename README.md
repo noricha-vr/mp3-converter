@@ -29,7 +29,7 @@ A simple, privacy-focused web application that converts audio and video files to
 ### Prerequisites
 
 - Node.js 20.19.0 or higher
-- npm or bun package manager
+- bun (dependencies are installed from bun.lock)
 
 ### Installation
 
