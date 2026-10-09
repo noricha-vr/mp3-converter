@@ -38,11 +38,8 @@ A simple, privacy-focused web application that converts audio and video files to
 git clone https://github.com/noricha-vr/mp3-converter
 cd mp3-converter
 
-# Install dependencies (using npm)
-npm install
-
-# Or using bun
-bun install
+# Install dependencies (the lockfile is bun.lock; do not use npm install)
+bun install --frozen-lockfile
 ```
 
 ### Development Server
