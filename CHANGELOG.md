@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-22 ESLint 更新
+
+- ESLint 10 と React Hooks plugin の flat config を互換化しました。音声変換と配備設定は変更しません。
+
 ## [Unreleased]
 
 ### Fixed
