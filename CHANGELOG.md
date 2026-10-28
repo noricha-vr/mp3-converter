@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-28 Vite 8 更新
+
+- Vite を 7 から 8 に、@vitejs/plugin-react を 4 から 6 に更新しました。変換処理と配備設定は変更しません。
+
+## 2026-10-28 Vite 8 更新
+
+- Vite を 7 から 8 に、@vitejs/plugin-react を 4 から 6 に更新しました。変換処理と配備設定は変更しません。
+
 ## 2026-10-22 ESLint 更新
 
 - ESLint 10 と React Hooks plugin の flat config を互換化しました。音声変換と配備設定は変更しません。
