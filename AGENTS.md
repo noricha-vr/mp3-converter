@@ -61,14 +61,14 @@ The application uses FFmpeg.wasm for media conversion. Key considerations:
    - Core: `https://unpkg.com/@ffmpeg/core@0.12.10/dist/esm/ffmpeg-core.js`
    - WASM: `https://unpkg.com/@ffmpeg/core@0.12.10/dist/esm/ffmpeg-core.wasm`
 
-2. **CORS Headers**: Critical headers required in `vite.config.js`:
+2. **COOP/COEP Headers**: `vite.config.js` sets these on the dev server and `vite preview` only:
    ```javascript
    {
      'Cross-Origin-Embedder-Policy': 'require-corp',
      'Cross-Origin-Opener-Policy': 'same-origin'
    }
    ```
-   These headers must be present in both `server` and `preview` configurations.
+   Production (Cloudflare Pages) does not send them (no `public/_headers`), so `crossOriginIsolated` is false there. This is fine: `@ffmpeg/core` is the single-thread build and does not need SharedArrayBuffer (verified: conversion works in production). No need to add the headers to production.
 
 3. **Module Format**: Uses ESM format (not UMD) for FFmpeg imports to avoid loading errors.
 
@@ -87,7 +87,7 @@ The application uses FFmpeg.wasm for media conversion. Key considerations:
 ### Build & Deployment Configuration
 
 1. **Node.js Version**: 20.19.0 (specified in `.nvmrc`)
-   - Required for Vite 7.0.4 compatibility
+   - Required by Vite 8 (`^20.19.0 || >=22.12.0`)
    - Cloudflare Pages uses this version during builds
 
 2. **Cloudflare Pages Deployment**:
@@ -98,7 +98,7 @@ The application uses FFmpeg.wasm for media conversion. Key considerations:
 
 3. **Vite Configuration**:
    - FFmpeg modules excluded from optimization
-   - CORS headers configured for both dev and preview
+   - COOP/COEP headers configured for dev and preview only
 
 ### Testing Strategy
 
@@ -116,19 +116,19 @@ Test configuration: `playwright.config.js`
 ### Common Issues & Solutions
 
 1. **FFmpeg Loading Errors**: 
-   - Ensure CORS headers are properly set
+   - Check that the CDN URLs (unpkg.com) are reachable
    - Verify using ESM format URLs
    - Check browser console for cross-origin errors
 
 2. **Build Failures on Cloudflare**:
    - `lockfile had changes, but lockfile is frozen`: run `bun install` and commit `bun.lock`
    - Verify Node.js version matches `.nvmrc`
-   - Check for Rollup compatibility issues
+   - Vite 8 uses Rolldown; check `bun.lock` is committed with `package.json`
 
 3. **Conversion Failures**:
    - FFmpeg must be fully loaded before conversion
    - File must be valid audio/video MIME type
-   - Browser must support SharedArrayBuffer
+   - Browser must support WebAssembly
 
 ### State Management Flow
 
