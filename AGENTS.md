@@ -74,6 +74,11 @@ The application uses FFmpeg.wasm for media conversion. Key considerations:
 
 ### Component Architecture
 
+Tailwind CSS 4 is compiled by `@tailwindcss/postcss` in `postcss.config.js`.
+`src/index.css` imports `tailwindcss` and explicitly loads the existing JavaScript
+configuration with `@config "../tailwind.config.js"`. Autoprefixer is not needed.
+Browser support requires Safari 16.4+, Chrome 111+, or Firefox 128+.
+
 **Converter.tsx** - Core conversion logic:
 - Manages FFmpeg instance lifecycle
 - Handles file validation (audio/video MIME types only)

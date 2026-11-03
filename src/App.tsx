@@ -8,7 +8,7 @@ function App() {
         <p className="mt-2 opacity-80">Convert video and audio files to MP3</p>
         <div className="mt-6 p-4 px-6 bg-white/10 border border-white/20 rounded-lg max-w-xl mx-auto backdrop-blur-md">
           <div className="flex items-start gap-4">
-            <span className="text-2xl block flex-shrink-0 mt-1">🔒</span>
+            <span className="text-2xl block shrink-0 mt-1">🔒</span>
             <div className="flex-1">
               <span className="block font-semibold text-base text-white/95 mb-1">100% Local Processing</span>
               <p className="m-0 text-sm leading-relaxed text-white/80">

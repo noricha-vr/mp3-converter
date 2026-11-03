@@ -16,13 +16,15 @@ A simple, privacy-focused web application that converts audio and video files to
 
 ## Technology Stack
 
-- **Frontend**: React 19.1.0 + TypeScript 5.8.3
-- **Build Tool**: Vite 7.0.4
-- **Styling**: Tailwind CSS 3.4
+- **Frontend**: React 19 + TypeScript 5.8.3
+- **Build Tool**: Vite 8
+- **Styling**: Tailwind CSS 4.3 with `@tailwindcss/postcss`
 - **Media Processing**: FFmpeg.wasm 0.12.15
 - **Testing**: Playwright
 - **Package Manager**: Bun / npm
 - **Deployment**: Cloudflare Pages
+
+Supported browsers: Safari 16.4+, Chrome 111+, and Firefox 128+ (Tailwind CSS 4 requirements).
 
 ## Getting Started
 

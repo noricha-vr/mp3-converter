@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-04 Tailwind CSS 4 更新
+
+### Changed
+
+- Tailwind CSS を 4.3.3 に更新し、PostCSS 設定・CSS の読み込み・廃止されたクラスを互換化しました。対応ブラウザは Safari 16.4+、Chrome 111+、Firefox 128+ です。
+
 ## 2026-10-28 Vite 8 更新
 
 - Vite を 7 から 8 に、@vitejs/plugin-react を 4 から 6 に更新しました。変換処理と配備設定は変更しません。
